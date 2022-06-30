@@ -14,6 +14,9 @@ class PlaneGame(object):
         self.clock = pygame.time.Clock()
         # 调用精灵组精灵私有方法
         self.__creat_sprites()
+        # 4. 设置定时器事件
+        pygame.time.set_timer(CREATE_ENEMY_EVENT, 1000)
+        pygame.time.set_timer(HERO_FIRE_EVENT, 500)
 
     def __creat_sprites(self):
         bg1 = Background()

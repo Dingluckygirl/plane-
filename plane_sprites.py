@@ -21,9 +21,7 @@ class GameSprite(pygame.sprite.Sprite):
         self.image = pygame.image.load(image_name)
         self.rect = self.image.get_rect()
         self.speed = speed
-        # 4. 设置定时器事件
-        pygame.time.set_timer(CREATE_ENEMY_EVENT, 1000)
-        pygame.time.set_timer(HERO_FIRE_EVENT, 500)
+
 
     def update(self):
         self.rect.y += self.speed
@@ -57,7 +55,7 @@ class Enemy(GameSprite):
         # 3 指定初始位置
         self.rect.bottom = 0
         max_x = SCREEN_RECT.width - self.rect.width
-        self.rect.x = random.randint(1, max_x)
+        self.rect.x = random.randint(0, max_x)
 
     def update(self):
         # 1.调用父类方法
